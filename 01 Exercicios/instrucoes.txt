@@ -1,0 +1,5 @@
+INSTRUÇÕES:
+ - Clonar o repositório no seu computador;
+ - Abrir no VSCODE;
+ - Abrir o terminal e digitar "npm install"
+ - Verifique se foram instalados os arquivos .json e a pasta node_modules;
