@@ -1,44 +1,74 @@
 const prompt = require('prompt-sync')();
 
-
-let vectSalary = [];
 let salary;
+let vectSalary = [];
 let numberOfChildren;
-let cont;
+let vectNumberOfChildren = [];
+let answer;
+
+do {
+    salary = parseFloat(prompt("Digite seu salário: "));
+    vectSalary.push(salary)
+    numberOfChildren = parseFloat(prompt("Digite quantos filhos você tem: "));
+    vectNumberOfChildren.push(numberOfChildren)
+    answer = prompt("Digite (s) para adicionar mais um habitante e (n) para finalizar o programa: ");
+}
+while (answer == 's')
+
+console.log(inhabitantDate(vectSalary, vectNumberOfChildren));
 
 
 
-do{
-    salary = parseInt(prompt("Digite seu salário: "));
-    vectSalary.push(salary);
-    numberOfChildren = parseInt(prompt("Digite quantos filhos você tem: "));
+function inhabitantDate(value01, value02) {
 
-    console.log("Deseja continuar o programa? ");
-    cont = prompt();
+    let averageSalary = 0;
+    let averageChildren = 0;
+    let higherSalary = 0;
+    let lowerSalaries = 0;
+    let percentageOfSalaries = 0;
 
-    if(cont == 'n'){
-        console.log("Fim do programa!");
+    for (let i = 0; i < vectSalary.length; i++) {
+        averageSalary += value01[i];
+        averageChildren += value02[i];
+        if (value01[i] > higherSalary) {
+            higherSalary = value01[i];
+        } else if (value01[i] < higherSalary) {
+            higherSalary = higherSalary;
+        } if (value01[i] < 350) {
+            lowerSalaries++
+        }
+
     }
+    averageSalary = averageSalary / value01.length;
+    averageChildren = averageChildren / value02.length;
+    percentageOfSalaries = (lowerSalaries / value01.length) * 100;
+
+    return "Média salarial: " + averageSalary +
+           "\nMédia número de filhos: " + averageChildren +
+           "\nO maior salário é: " + higherSalary +
+           "\nO percentual de salários menores de R$ 350,00 é: " + percentageOfSalaries + "%";
+
 }
-while(cont == 's')
 
 
 
 
-for(let i=0; i < vectSalary.length; i++){
-
-    console.log(vectSalary[i] / i);
-}
 
 
 /*
-- salario 
-- numero de filho
+do
+{
+-salario
+-numero de filhos
+}
+while(  )
 
-*media salario população
-*media numero filho
-*maior salario
-*% pessoas ganham até 350 pila
+função(salario, filho){
+* média de salário da população
+* média do número de filhos
+* maior salário
+* percentual de pessoas com salário até R$
+350,00
 */
 
 

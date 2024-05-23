@@ -16,11 +16,9 @@ for(let i=0; i < 20; i++){
 }
 
 function order(a, b){
-    if(a < b){
-        return -1;
-    } else{
+    if(a < b)return -1;
         return 1;
-    }
+    
 }
 
 
