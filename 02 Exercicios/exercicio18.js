@@ -6,9 +6,6 @@ const funcionarios = [{
     salario: parseFloat(prompt("Digite o salário do colaborador: ")),
 }];
 
-
-
-
 for (const funcionario of funcionarios) {
     console.log("Nome: " + funcionario.nome +
                 "\nCargo: " + funcionario.cargo +

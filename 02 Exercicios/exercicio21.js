@@ -12,7 +12,6 @@ console.log(idealWeight(height, gender));
 
 
 function idealWeight(alt, genero){
-
     let pesoIdealMen = 72.7 * alt - 58;
     let pesoIdealWomen = 62.1 * alt - 44.7;
     if(genero == 'masculino') return "Seu peso ideal é: " +  pesoIdealMen.toFixed(2) + "kg";

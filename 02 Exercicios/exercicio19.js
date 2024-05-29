@@ -65,9 +65,7 @@ for (let i = 1; i <= 1; i++) {
         if (hour > 9 && min >  9 && sec > 9){
             vectTime[i] = hour + ":" + min + ":" + sec;
         }
-       
-
-        
+               
     } else{
         console.log("Informe um horário valido (HH.MM.SS).");
         i--;

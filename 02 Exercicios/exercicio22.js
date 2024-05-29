@@ -17,8 +17,6 @@ while (answer == 's')
 
 console.log(inhabitantDate(vectSalary, vectNumberOfChildren));
 
-
-
 function inhabitantDate(value01, value02) {
 
     let averageSalary = 0;
@@ -27,26 +25,25 @@ function inhabitantDate(value01, value02) {
     let lowerSalaries = 0;
     let percentageOfSalaries = 0;
 
-    for (let i = 0; i < vectSalary.length; i++) {
+    for (let i = 0; i < value01.length; i++) {
         averageSalary += value01[i];
         averageChildren += value02[i];
         if (value01[i] > higherSalary) {
             higherSalary = value01[i];
         } else if (value01[i] < higherSalary) {
             higherSalary = higherSalary;
-        } if (value01[i] < 350) {
+        } if (value01[i] <= 350) {
             lowerSalaries++
         }
-
     }
     averageSalary = averageSalary / value01.length;
     averageChildren = averageChildren / value02.length;
     percentageOfSalaries = (lowerSalaries / value01.length) * 100;
 
-    return "Média salarial: " + averageSalary +
-           "\nMédia número de filhos: " + averageChildren +
-           "\nO maior salário é: " + higherSalary +
-           "\nO percentual de salários menores de R$ 350,00 é: " + percentageOfSalaries + "%";
+    return "Média salarial R$ " + averageSalary.toFixed(2) +
+           "\nMédia número de filhos: " + averageChildren.toFixed(2) +
+           "\nO maior salário é R$ " + higherSalary.toFixed(2) +
+           "\nO percentual de salários até R$ 350,00 é: " + percentageOfSalaries.toFixed(2) + "%";
 
 }
 
