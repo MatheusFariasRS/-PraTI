@@ -19,8 +19,8 @@ let matriz = [
 //console.log(matriz[0][0] + matriz[1][0] + matriz[2][0] + matriz[3][0]);
 //console.log(matriz[0][1] + matriz[1][1] + matriz[2][1] + matriz[3][1]);
 
-//let vectC = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-vectC = new Array(20).fill(0)
+
+let vectC = new Array(20).fill(0)
 
 for (let i = 0; i < matriz.length; i++) {
      
