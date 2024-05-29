@@ -16,26 +16,28 @@ let matriz = [
     [281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300]
 ];
 
-console.log(matriz[0][0] + matriz[1][0] + matriz[2][0] + matriz[3][0]);
-console.log(matriz[0][1] + matriz[1][1] + matriz[2][1] + matriz[3][1]);
+//console.log(matriz[0][0] + matriz[1][0] + matriz[2][0] + matriz[3][0]);
+//console.log(matriz[0][1] + matriz[1][1] + matriz[2][1] + matriz[3][1]);
 
+//let vectC = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+vectC = new Array(20).fill(0)
 
-let counter01 = 0;
-let counter02 = 0;
-
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < matriz.length; i++) {
+     
     for (let j = 0; j < matriz[i].length; j++) {
-        if(matriz[i]){
-            cou
-        }
-      
+        vectC[j] += matriz[i][j];
     }
-    
-   
 }
 
+for (let i = 0; i < vectC.length; i++) {
+    console.log("A soma dos valores da coluna " + (i + 1) + "º: " + vectC[i]);
+}
+
+
+
+
+
 /*
-for (let j = 0; j < matriz[i].length; j++) {
-      
-    }
-    */ 
+Faça um algoritmo que leia uma matriz de 15 X 20 de números reais e mostre a soma
+de cada coluna separadamente.
+ */
