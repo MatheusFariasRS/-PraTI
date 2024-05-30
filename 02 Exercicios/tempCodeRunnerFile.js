@@ -1,2 +1,2 @@
 
-let vectC = new Array(20).fill(0)
+let SC = new Array(5).fill(0)
