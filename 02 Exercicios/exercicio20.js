@@ -89,13 +89,10 @@ const funcionarios = [
                 "\nSalário liquido mensal: " + inssDeducao(funcionario["Salário bruto"]) +
                 "\n");
 }
-
-
 function inssDeducao(value, value02){
     value02 = value * 0.12;
     return value - value02;
 }
-
 function inss(value){
     value = value * 0.12;
     return value;

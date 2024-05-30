@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')();
 let M =  [[13, 25, 18, 51, 43, 46],
           [14, 88, 23, 10, 12, 32],
           [13, 22, 11, 94, 38, 90],
@@ -5,21 +6,21 @@ let M =  [[13, 25, 18, 51, 43, 46],
           [15, 45, 20, 25, 12, 63],
           [25, 25, 10, 15, 20, 91]]
 
-let A = 33;
+let A = parseFloat(prompt('Digite um número para multiplicar a matriz: '));
 
 
 function multVect(mat, mult){
-    
-    let V = new Array(36).fill(0);
+
+    let V = [];
 
     for (let i = 0; i < mat.length; i++) {
-     
+
         for (let j = 0; j < mat[i].length; j++) {
-            mat[i][j] = mat[i][j] * mult; 
-            
+            V.push(mat[i][j] * mult); 
+
         }
 }
-    V = mat;
+
     console.log(V);
 }
 

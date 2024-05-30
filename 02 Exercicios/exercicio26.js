@@ -18,7 +18,7 @@ for (let i = 0; i < A.length; i++) {
 }
 
 for (let i = 0; i < P.length; i++) {
-    console.log(P[i] + " ");
+    console.log(P[i] + ' ');
 }
 
 /* 
