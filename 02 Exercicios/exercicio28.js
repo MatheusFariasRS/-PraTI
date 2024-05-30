@@ -11,21 +11,12 @@ let matriz = [
     [91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 ];
 
-
-let lineUp = 0;
-let  columnUp = 1;
-let lineDown = 2;
-let  columnDwon = 1;
-
-let vect = [0, 0, 0, 0];
+let vect = new Array(2).fill(0)
 
 for (let i = 0; i < matriz.length; i++) {
     for (let j = 0; j < matriz[i].length; j++) {
-       if(lineUp < 10 && columnUp < 10)vect[0] += matriz[lineUp][columnUp], lineUp++, columnUp++;
-       if(lineDown < 10 && columnDwon < 10)vect[1] += matriz[lineDown][columnDwon], lineDown++, columnDwon++;
-       if(j > i) vect[2] += matriz[i][j]
-       if(j < i) vect[3] += matriz[i][j]
-
+       if(j > i) vect[0] += matriz[i][j]
+       if(j < i) vect[1] += matriz[i][j]
     }
 }
 console.log(vect);
