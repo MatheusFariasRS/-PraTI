@@ -16,16 +16,16 @@ for (let i = 0; i < M.length; i++) {
     }
     console.log(print);
 }
-
-console.log("Vetor SC: [" + SC + "]");
 console.log("Vetor SL: [" + SL + "]");
+console.log("Vetor SC: [" + SC + "]");
+
 /*
-for (let i = 0; i < SC.length; i++) {
-    console.log("A soma dos valores da linha nº " + (i + 1) + ": " + SC[i]);
+for (let i = 0; i < SL.length; i++) {
+    console.log("A soma dos valores da linha nº " + (i + 1) + ": " + SL[i]);
 }
 
 for (let i = 0; i < SC.length; i++) {
-    console.log("A soma dos valores da coluna nº " + (i + 1) + ": " + SL[i]);
+    console.log("A soma dos valores da coluna nº " + (i + 1) + ": " + SC[i]);
 }
 
 
