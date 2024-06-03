@@ -53,15 +53,21 @@ let matriz = [
 
 let mult = [];
 for (let i = 0; i < matriz.length; i++) {
+    
     for (let j = 0; j < matriz[i].length; j++) {
         if(i == j) mult.push(matriz[i][j]); 
+        
         }
+        
 }
 
 for (let i = 0; i < matriz.length; i++) {
+    let print = ''
     for (let j = 0; j < matriz[i].length; j++) {
-        console.log(matriz[i][j] * mult[i]);
+        ;
+        print += matriz[i][j] * mult[i] + ", ";
     }
+    console.log(print);
 }
 
 

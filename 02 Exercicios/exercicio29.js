@@ -9,8 +9,8 @@ let vect = new Array(5).fill(0)
 for (let i = 0; i < M.length; i++) {
     let print = ''
     for (let j = 0; j < M[i].length; j++) {
-        if(i == 4) vect[0] += M[i][j] // a linha 4 é a quinta linha, visto q a contagem começa em 0
-        if(j == 2) vect[1] += M[i][j]; // a coluna 2 é a terceira coluna, visto q a contagem começa em 0
+        if(i == 3) vect[0] += M[i][j] // a linha 4 é a quinta linha, visto q a contagem começa em 0
+        if(j == 1) vect[1] += M[i][j]; // a coluna 2 é a terceira coluna, visto q a contagem começa em 0
         if(i == j) vect[2] += M[i][j];
         vect[3] += M[i][j]
         print += M[i][j] + " ";

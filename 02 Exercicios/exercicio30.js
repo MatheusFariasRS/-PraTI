@@ -4,13 +4,13 @@ let M =  [[11, 25, 18, 51, 43],
           [31, 93, 34, 94, 38],
           [13, 22, 12, 45, 67]];
 
-let SL = new Array(5).fill(0)
-let SC = new Array(5).fill(0)
+let SL = new Array(5).fill(0);
+let SC = new Array(5).fill(0);
 
 for (let i = 0; i < M.length; i++) {
-    let print = ''
+    let print = '';
     for (let j = 0; j < M[i].length; j++) {
-        SL[i] += M[i][j]
+        SL[i] += M[i][j];
         SC[j] += M[i][j];
         print += M[i][j] + " ";
     }
