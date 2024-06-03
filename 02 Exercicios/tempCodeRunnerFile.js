@@ -1,2 +1,2 @@
 
-for (let i = 0; i < vect.length; i++) {
+          if (G[i] == resposta.Respostas[i]) acertos++;

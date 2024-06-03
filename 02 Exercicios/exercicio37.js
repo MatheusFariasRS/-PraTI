@@ -1,123 +1,79 @@
-const apostas = [
-  { Cartao: '317', Numeros: [19, 42, 6, 23, 44, 57, 6, 3, 6, 34, 52, 42, 13] },
-  { Cartao: '911', Numeros: [4, 30, 26, 42, 14, 49, 58, 57, 15, 25, 40, 56, 55] },
-  { Cartao: '785', Numeros: [22, 19, 46, 25, 41, 18, 12, 15, 53, 28, 39, 29, 48] },
-  { Cartao: '261', Numeros: [3, 56, 18, 33, 50, 59, 18, 19, 27, 1, 9, 25, 44] },
-  { Cartao: '830', Numeros: [12, 16, 53, 43, 59, 27, 6, 21, 22, 18, 2, 22, 51] },
-  { Cartao: '552', Numeros: [22, 31, 33, 38, 4, 20, 46, 32, 56, 1, 50, 5, 2] },
-  { Cartao: '719', Numeros: [50, 6, 56, 11, 58, 50, 47, 4, 47, 3, 54, 2, 9] },
-  { Cartao: '218', Numeros: [41, 51, 1, 32, 44, 9, 11, 34, 34, 54, 58, 8, 30] },
-  { Cartao: '430', Numeros: [57, 51, 51, 5, 33, 25, 54, 36, 18, 14, 7, 51, 47] },
-  { Cartao: '826', Numeros: [50, 4, 60, 37, 20, 52, 15, 39, 41, 53, 15, 18, 38] },
-  { Cartao: '959', Numeros: [26, 40, 32, 60, 24, 36, 56, 16, 46, 33, 42, 9, 43] },
-  { Cartao: '147', Numeros: [49, 51, 5, 10, 8, 29, 13, 10, 40, 46, 40, 57, 26] },
-  { Cartao: '932', Numeros: [24, 47, 25, 52, 13, 33, 23, 3, 26, 32, 17, 41, 6] },
-  { Cartao: '751', Numeros: [12, 11, 59, 30, 14, 32, 31, 33, 1, 18, 11, 5, 12] },
-  { Cartao: '981', Numeros: [34, 35, 13, 22, 54, 55, 49, 35, 50, 44, 57, 9, 26] },
-  { Cartao: '430', Numeros: [55, 25, 37, 15, 9, 34, 42, 7, 51, 58, 30, 5, 56] },
-  { Cartao: '145', Numeros: [32, 39, 49, 51, 29, 23, 22, 48, 31, 57, 22, 22, 20] },
-  { Cartao: '794', Numeros: [57, 34, 40, 10, 10, 37, 23, 33, 24, 19, 34, 23, 40] },
-  { Cartao: '189', Numeros: [24, 49, 19, 17, 35, 45, 46, 12, 13, 3, 51, 1, 6] },
-  { Cartao: '951', Numeros: [2, 2, 25, 45, 7, 4, 55, 12, 43, 2, 47, 59, 24] },
-  { Cartao: '593', Numeros: [45, 18, 60, 40, 49, 39, 4, 37, 54, 47, 46, 25, 35] },
-  { Cartao: '831', Numeros: [20, 57, 34, 1, 2, 53, 35, 30, 23, 5, 59, 27, 18] },
-  { Cartao: '344', Numeros: [45, 26, 51, 40, 8, 8, 51, 33, 17, 7, 8, 11, 60] },
-  { Cartao: '422', Numeros: [7, 14, 58, 48, 49, 25, 1, 2, 11, 33, 39, 40, 44] },
-  { Cartao: '809', Numeros: [32, 15, 25, 54, 49, 46, 40, 50, 55, 11, 5, 22, 60] },
-  { Cartao: '876', Numeros: [2, 19, 13, 18, 42, 56, 46, 19, 4, 41, 54, 58, 34] },
-  { Cartao: '120', Numeros: [48, 41, 24, 22, 33, 42, 27, 28, 15, 4, 46, 57, 54] },
-  { Cartao: '708', Numeros: [3, 55, 24, 36, 50, 47, 48, 11, 9, 47, 29, 52, 29] },
-  { Cartao: '174', Numeros: [58, 4, 12, 18, 31, 31, 5, 12, 45, 5, 5, 53, 13] },
-  { Cartao: '539', Numeros: [50, 2, 55, 12, 27, 31, 16, 55, 15, 39, 59, 21, 48] },
-  { Cartao: '132', Numeros: [10, 18, 14, 55, 12, 1, 45, 44, 47, 3, 48, 13, 15] },
-  { Cartao: '265', Numeros: [58, 25, 4, 51, 41, 12, 55, 47, 6, 53, 21, 56, 58] },
-  { Cartao: '957', Numeros: [27, 49, 14, 9, 18, 50, 22, 4, 59, 32, 20, 31, 18] },
-  { Cartao: '853', Numeros: [27, 31, 17, 45, 14, 12, 16, 25, 41, 19, 42, 14, 10] },
-  { Cartao: '140', Numeros: [32, 36, 26, 48, 39, 45, 54, 47, 18, 47, 55, 11, 14] },
-  { Cartao: '237', Numeros: [39, 47, 28, 4, 5, 38, 18, 3, 26, 14, 29, 11, 52] },
-  { Cartao: '659', Numeros: [1, 34, 26, 35, 4, 4, 21, 56, 50, 12, 52, 58, 2] },
-  { Cartao: '789', Numeros: [42, 3, 59, 35, 43, 42, 15, 12, 14, 10, 7, 26, 43] },
-  { Cartao: '768', Numeros: [3, 57, 57, 29, 7, 19, 48, 20, 47, 16, 29, 46, 48] },
-  { Cartao: '763', Numeros: [40, 21, 35, 22, 12, 29, 59, 33, 9, 38, 7, 14, 11] },
-  { Cartao: '129', Numeros: [18, 56, 38, 50, 3, 57, 21, 36, 44, 46, 15, 49, 4] },
-  { Cartao: '785', Numeros: [15, 46, 52, 32, 9, 1, 24, 59, 26, 5, 10, 5, 36] },
-  { Cartao: '374', Numeros: [43, 47, 11, 54, 29, 57, 56, 4, 55, 51, 30, 49, 46] },
-  { Cartao: '653', Numeros: [42, 35, 20, 34, 26, 18, 15, 58, 33, 31, 44, 12, 5] },
-  { Cartao: '956', Numeros: [43, 13, 46, 1, 47, 52, 12, 33, 23, 14, 25, 59, 14] },
-  { Cartao: '193', Numeros: [46, 11, 13, 10, 43, 12, 42, 30, 14, 43, 6, 21, 59] },
-  { Cartao: '320', Numeros: [13, 25, 56, 34, 29, 7, 52, 22, 26, 2, 6, 1, 15] },
-  { Cartao: '470', Numeros: [17, 45, 34, 23, 54, 56, 51, 10, 51, 12, 35, 25, 20] },
-  { Cartao: '204', Numeros: [15, 9, 11, 15, 4, 54, 36, 3, 16, 14, 23, 46, 7] },
-  { Cartao: '329', Numeros: [58, 45, 28, 26, 16, 9, 10, 56, 42, 57, 24, 46, 22] },
-  { Cartao: '409', Numeros: [23, 36, 32, 36, 21, 15, 58, 41, 59, 38, 28, 15, 57] },
-  { Cartao: '815', Numeros: [21, 23, 24, 20, 13, 18, 25, 47, 45, 41, 13, 33, 33] },
-  { Cartao: '330', Numeros: [3, 53, 19, 10, 41, 46, 43, 3, 59, 23, 53, 50, 20] },
-  { Cartao: '632', Numeros: [31, 11, 20, 1, 46, 57, 21, 23, 48, 13, 12, 17, 35] },
-  { Cartao: '606', Numeros: [43, 29, 42, 41, 19, 50, 14, 9, 19, 52, 27, 51, 45] },
-  { Cartao: '792', Numeros: [7, 51, 7, 4, 44, 24, 14, 2, 42, 26, 14, 45, 27] },
-  { Cartao: '460', Numeros: [18, 59, 35, 52, 29, 7, 48, 38, 44, 53, 52, 6, 34] },
-  { Cartao: '259', Numeros: [34, 13, 13, 39, 26, 27, 5, 40, 34, 45, 1, 8, 33] },
-  { Cartao: '842', Numeros: [47, 17, 22, 33, 5, 42, 18, 29, 6, 16, 6, 26, 10] },
-  { Cartao: '906', Numeros: [39, 53, 18, 58, 2, 13, 58, 38, 45, 27, 45, 31, 57] },
-  { Cartao: '155', Numeros: [14, 44, 32, 43, 35, 26, 9, 56, 23, 2, 15, 6, 51] },
-  { Cartao: '298', Numeros: [17, 16, 49, 12, 38, 1, 49, 5, 38, 57, 31, 49, 24] },
-  { Cartao: '456', Numeros: [31, 20, 38, 56, 11, 24, 29, 59, 53, 7, 4, 58, 47] },
-  { Cartao: '493', Numeros: [21, 18, 25, 42, 52, 19, 11, 38, 43, 53, 6, 15, 6] },
-  { Cartao: '463', Numeros: [5, 56, 58, 29, 45, 24, 33, 33, 45, 5, 43, 34, 12] },
-  { Cartao: '313', Numeros: [51, 20, 15, 49, 54, 16, 40, 14, 11, 48, 22, 12, 3] },
-  { Cartao: '448', Numeros: [9, 26, 17, 5, 17, 46, 18, 56, 27, 2, 42, 48, 57] },
-  { Cartao: '726', Numeros: [5, 13, 42, 20, 45, 59, 31, 51, 14, 16, 29, 4, 2] },
-  { Cartao: '214', Numeros: [40, 4, 31, 33, 38, 36, 52, 12, 24, 41, 49, 59, 55] },
-  { Cartao: '598', Numeros: [38, 13, 38, 29, 48, 44, 57, 48, 15, 16, 7, 29, 31] },
-  { Cartao: '963', Numeros: [27, 20, 59, 25, 42, 34, 3, 53, 9, 52, 29, 48, 4] },
-  { Cartao: '703', Numeros: [7, 15, 1, 58, 9, 26, 10, 21, 8, 59, 29, 50, 50] },
-  { Cartao: '836', Numeros: [11, 43, 39, 21, 38, 47, 23, 18, 25, 11, 55, 19, 6] },
-  { Cartao: '196', Numeros: [28, 41, 11, 5, 53, 46, 9, 57, 10, 59, 54, 14, 34] },
-  { Cartao: '103', Numeros: [5, 11, 48, 48, 49, 56, 42, 46, 8, 13, 20, 14, 22] },
-  { Cartao: '690', Numeros: [22, 4, 59, 59, 52, 44, 29, 57, 50, 10, 23, 8, 8] },
-  { Cartao: '681', Numeros: [52, 56, 18, 48, 13, 21, 8, 7, 43, 36, 20, 5, 53] },
-  { Cartao: '642', Numeros: [23, 21, 41, 31, 14, 38, 17, 7, 45, 58, 53, 11, 4] },
-  { Cartao: '131', Numeros: [12, 4, 21, 5, 3, 8, 26, 40, 9, 47, 20, 55, 27] },
-  { Cartao: '473', Numeros: [1, 50, 7, 22, 19, 26, 39, 24, 11, 4, 48, 2, 48] },
-  { Cartao: '934', Numeros: [47, 2, 22, 24, 8, 34, 15, 6, 47, 17, 40, 55, 39] },
-  { Cartao: '453', Numeros: [58, 39, 27, 17, 9, 41, 23, 49, 6, 5, 16, 8, 11] },
-  { Cartao: '512', Numeros: [8, 38, 44, 10, 20, 56, 8, 45, 21, 31, 35, 59, 1] },
-  { Cartao: '499', Numeros: [29, 36, 16, 29, 4, 46, 54, 35, 25, 25, 44, 29, 34] },
-  { Cartao: '356', Numeros: [2, 24, 12, 10, 35, 8, 7, 9, 20, 56, 27, 18, 12] },
-  { Cartao: '287', Numeros: [1, 8, 49, 31, 53, 12, 22, 5, 18, 58, 24, 15, 9] },
-  { Cartao: '649', Numeros: [28, 47, 26, 51, 55, 29, 29, 21, 57, 53, 33, 5, 9] },
-  { Cartao: '495', Numeros: [2, 52, 21, 10, 56, 53, 57, 19, 12, 11, 41, 13, 53] },
-  { Cartao: '619', Numeros: [17, 31, 38, 9, 17, 12, 22, 49, 44, 2, 24, 5, 21] },
-  { Cartao: '264', Numeros: [57, 13, 22, 20, 43, 9, 57, 20, 42, 56, 10, 52, 12] },
-  { Cartao: '298', Numeros: [26, 56, 8, 16, 16, 26, 49, 57, 31, 20, 56, 58, 51] },
-  { Cartao: '726', Numeros: [12, 29, 12, 18, 42, 1, 40, 36, 49, 56, 47, 52, 29] },
-  { Cartao: '276', Numeros: [18, 14, 3, 22, 10, 38, 3, 53, 5, 8, 44, 23, 23] },
-  { Cartao: '253', Numeros: [22, 58, 5, 2, 58, 1, 33, 1, 13, 20, 20, 46, 31] },
-  { Cartao: '742', Numeros: [25, 10, 7, 31, 48, 51, 25, 54, 29, 14, 51, 22, 8] },
-  { Cartao: '839', Numeros: [20, 57, 15, 46, 18, 55, 48, 28, 6, 50, 14, 17, 3] },
-  { Cartao: '101', Numeros: [53, 26, 14, 36, 8, 14, 44, 53, 5, 48, 1, 41, 41] },
-  { Cartao: '418', Numeros: [52, 33, 9, 9, 55, 34, 16, 10, 31, 53, 42, 35, 20] },
-  { Cartao: '742', Numeros: [42, 34, 29, 18, 4, 22, 33, 52, 8, 16, 36, 16, 8] },
-  { Cartao: '850', Numeros: [12, 44, 16, 2, 54, 46, 29, 58, 53, 26, 19, 4, 52] },
-  { Cartao: '124', Numeros: [22, 12, 42, 50, 21, 52, 47, 58, 48, 29, 36, 16, 8] },
-]                              
+let G = ['C', 'D', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'A'];
 
-let sorteio = [22, 12, 42, 50, 21, 52, 47, 58, 48, 29, 36, 16, 8];
+const R = [
+  { Aluno:  1, Respostas: ['C', 'D', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'A']},
+  { Aluno:  2, Respostas: ['C', 'C', 'E', 'B', 'B', 'A', 'B', 'A', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'A']},
+  { Aluno:  3, Respostas: ['C', 'D', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'B', 'D', 'A', 'E', 'E', 'A']},
+  { Aluno:  4, Respostas: ['C', 'B', 'C', 'A', 'E', 'D', 'A', 'C', 'A', 'D', 'B', 'A', 'E', 'A', 'D', 'E', 'B', 'D', 'A', 'B']},
+  { Aluno:  5, Respostas: ['B', 'A', 'D', 'A', 'E', 'C', 'D', 'E', 'A', 'D', 'A', 'D', 'B', 'B', 'C', 'A', 'E', 'C', 'B', 'A']},
+  { Aluno:  6, Respostas: ['B', 'B', 'A', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'D', 'B', 'D', 'D', 'A']},
+  { Aluno:  7, Respostas: ['A', 'C', 'A', 'C', 'D', 'D', 'A', 'A', 'E', 'E', 'B', 'B', 'D', 'B', 'A', 'A', 'C', 'D', 'B', 'E']},
+  { Aluno:  8, Respostas: ['A', 'D', 'B', 'C', 'E', 'D', 'B', 'C', 'D', 'D', 'E', 'A', 'B', 'A', 'B', 'A', 'E', 'A', 'C', 'A']},
+  { Aluno:  9, Respostas: ['C', 'B', 'E', 'D', 'C', 'E', 'C', 'A', 'D', 'B', 'D', 'A', 'A', 'E', 'A', 'A', 'D', 'A', 'B', 'B']},
+  { Aluno: 10, Respostas: ['A', 'B', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'A']},
+  { Aluno: 11, Respostas: ['D', 'A', 'B', 'E', 'A', 'E', 'B', 'C', 'A', 'D', 'C', 'D', 'D', 'C', 'A', 'A', 'B', 'B', 'A', 'E']},
+  { Aluno: 12, Respostas: ['D', 'B', 'B', 'B', 'A', 'A', 'E', 'A', 'C', 'D', 'C', 'A', 'E', 'D', 'A', 'B', 'D', 'A', 'E', 'C']},
+  { Aluno: 13, Respostas: ['B', 'D', 'A', 'A', 'D', 'C', 'C', 'E', 'D', 'E', 'C', 'A', 'B', 'A', 'B', 'E', 'B', 'A', 'D', 'A']},
+  { Aluno: 14, Respostas: ['B', 'A', 'A', 'A', 'D', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'E', 'B', 'B', 'C']},
+  { Aluno: 15, Respostas: ['B', 'C', 'E', 'D', 'A', 'E', 'B', 'C', 'D', 'B', 'A', 'B', 'E', 'A', 'C', 'D', 'A', 'A', 'A', 'D']},
+  { Aluno: 16, Respostas: ['E', 'B', 'D', 'C', 'E', 'C', 'A', 'D', 'A', 'E', 'B', 'A', 'A', 'B', 'D', 'B', 'D', 'C', 'A', 'A']},
+  { Aluno: 17, Respostas: ['C', 'A', 'A', 'E', 'C', 'A', 'E', 'B', 'D', 'A', 'B', 'D', 'E', 'C', 'B', 'A', 'B', 'D', 'D', 'A']},
+  { Aluno: 18, Respostas: ['C', 'D', 'A', 'B', 'A', 'C', 'A', 'B', 'A', 'B', 'A', 'D', 'A', 'E', 'C', 'E', 'B', 'D', 'D', 'E']},
+  { Aluno: 19, Respostas: ['C', 'C', 'A', 'B', 'A', 'E', 'A', 'D', 'C', 'B', 'E', 'D', 'B', 'D', 'B', 'E', 'D', 'A', 'A', 'A']},
+  { Aluno: 20, Respostas: ['B', 'C', 'A', 'A', 'D', 'D', 'E', 'E', 'D', 'C', 'A', 'A', 'B', 'A', 'A', 'B', 'C', 'E', 'B', 'D']},
+  { Aluno: 21, Respostas: ['B', 'A', 'E', 'D', 'A', 'E', 'C', 'A', 'C', 'A', 'C', 'B', 'A', 'B', 'E', 'A', 'D', 'B', 'D', 'D']},
+  { Aluno: 22, Respostas: ['C', 'A', 'E', 'B', 'A', 'A', 'D', 'A', 'D', 'C', 'B', 'C', 'E', 'E', 'B', 'D', 'A', 'A', 'B', 'D']},
+  { Aluno: 23, Respostas: ['A', 'A', 'B', 'A', 'E', 'A', 'D', 'A', 'C', 'D', 'D', 'B', 'A', 'E', 'E', 'B', 'B', 'D', 'C', 'C']},
+  { Aluno: 24, Respostas: ['C', 'D', 'A', 'C', 'B', 'B', 'D', 'A', 'A', 'A', 'E', 'D', 'A', 'E', 'A', 'E', 'C', 'D', 'B', 'B']},
+  { Aluno: 25, Respostas: ['C', 'D', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'C', 'B', 'A', 'C', 'D', 'C', 'D', 'B']},
+  { Aluno: 26, Respostas: ['E', 'A', 'B', 'B', 'D', 'E', 'C', 'A', 'B', 'A', 'C', 'A', 'E', 'D', 'D', 'C', 'B', 'A', 'A', 'D']},
+  { Aluno: 27, Respostas: ['C', 'D', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'A']},
+  { Aluno: 28, Respostas: ['C', 'A', 'E', 'C', 'D', 'D', 'C', 'B', 'A', 'D', 'A', 'E', 'B', 'E', 'A', 'A', 'D', 'B', 'B', 'A']},
+  { Aluno: 29, Respostas: ['C', 'B', 'D', 'A', 'D', 'D', 'A', 'A', 'E', 'A', 'B', 'D', 'A', 'E', 'B', 'C', 'C', 'B', 'E', 'A']},
+  { Aluno: 30, Respostas: ['B', 'A', 'E', 'E', 'D', 'A', 'C', 'A', 'B', 'B', 'E', 'D', 'A', 'A', 'B', 'D', 'D', 'C', 'C', 'A']},
+  { Aluno: 31, Respostas: ['C', 'D', 'A', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'A']},
+  { Aluno: 32, Respostas: ['D', 'D', 'E', 'A', 'A', 'A', 'D', 'C', 'B', 'A', 'A', 'D', 'E', 'B', 'C', 'B', 'B', 'A', 'C', 'E']},
+  { Aluno: 33, Respostas: ['C', 'A', 'E', 'A', 'B', 'D', 'A', 'E', 'D', 'B', 'B', 'C', 'C', 'D', 'D', 'B', 'A', 'E', 'A', 'A']},
+  { Aluno: 34, Respostas: ['A', 'C', 'E', 'E', 'B', 'A', 'B', 'A', 'A', 'C', 'D', 'B', 'A', 'D', 'B', 'C', 'A', 'E', 'D', 'D']},
+  { Aluno: 35, Respostas: ['C', 'A', 'D', 'E', 'B', 'E', 'A', 'B', 'D', 'A', 'A', 'A', 'C', 'D', 'C', 'D', 'E', 'A', 'B', 'B']},
+  { Aluno: 36, Respostas: ['A', 'E', 'A', 'D', 'B', 'C', 'C', 'A', 'C', 'D', 'B', 'D', 'A', 'D', 'A', 'A', 'B', 'E', 'B', 'E']},
+  { Aluno: 37, Respostas: ['E', 'C', 'B', 'B', 'E', 'B', 'A', 'C', 'D', 'A', 'E', 'D', 'D', 'A', 'D', 'A', 'A', 'B', 'A', 'C']},
+  { Aluno: 38, Respostas: ['A', 'B', 'D', 'D', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'A']},
+  { Aluno: 39, Respostas: ['E', 'A', 'B', 'A', 'C', 'A', 'C', 'A', 'B', 'D', 'A', 'D', 'B', 'C', 'D', 'E', 'A', 'E', 'D', 'B']},
+  { Aluno: 40, Respostas: ['E', 'D', 'A', 'A', 'A', 'B', 'E', 'D', 'E', 'B', 'B', 'B', 'D', 'C', 'C', 'A', 'C', 'D', 'A', 'A']},
+  { Aluno: 41, Respostas: ['C', 'B', 'A', 'E', 'D', 'B', 'D', 'C', 'B', 'C', 'A', 'E', 'A', 'D', 'A', 'A', 'D', 'A', 'C', 'B']},
+  { Aluno: 42, Respostas: ['D', 'C', 'B', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'D', 'C', 'A', 'E', 'D', 'E', 'B', 'E']},
+  { Aluno: 43, Respostas: ['C', 'D', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'B', 'D', 'D', 'C', 'E', 'E', 'C', 'A']},
+  { Aluno: 44, Respostas: ['C', 'D', 'A', 'B', 'E', 'A', 'C', 'B', 'D', 'D', 'A', 'A', 'B', 'B', 'A', 'A', 'D', 'D', 'E', 'C']},
+  { Aluno: 45, Respostas: ['C', 'D', 'A', 'B', 'E', 'A', 'C', 'B', 'D', 'D', 'A', 'A', 'B', 'B', 'A', 'A', 'D', 'D', 'E', 'C']},
+  { Aluno: 46, Respostas: ['A', 'D', 'A', 'D', 'E', 'B', 'C', 'A', 'C', 'E', 'A', 'B', 'B', 'E', 'C', 'D', 'B', 'A', 'A', 'D']},
+  { Aluno: 47, Respostas: ['B', 'E', 'D', 'A', 'C', 'A', 'C', 'E', 'B', 'D', 'A', 'B', 'A', 'D', 'A', 'D', 'C', 'B', 'E', 'D']},
+  { Aluno: 48, Respostas: ['D', 'C', 'A', 'B', 'E', 'A', 'E', 'B', 'A', 'D', 'B', 'D', 'C', 'A', 'E', 'A', 'A', 'D', 'A', 'D']},
+  { Aluno: 49, Respostas: ['A', 'C', 'A', 'A', 'B', 'D', 'D', 'E', 'C', 'E', 'B', 'A', 'A', 'E', 'D', 'B', 'A', 'D', 'C', 'B']},
+  { Aluno: 50, Respostas: ['C', 'D', 'E', 'A', 'A', 'B', 'A', 'C', 'D', 'B', 'A', 'B', 'C', 'A', 'D', 'E', 'E', 'A', 'B', 'D']}
+];
 
-let ganhador = [];
 
-for (let aposta of apostas) {
-  let numeroCertos = [];
+for (let resposta of R) {
   let acertos = 0;
-  
-  for (let i = 0; i < 13; i++) {
-
-    for (let j = 0; j < 13; j++) {
-
-      if (sorteio[i] == aposta.Numeros[j]) numeroCertos.push(aposta.Numeros[i]),  acertos++;
+  for (let i = 0; i < G.length; i++) {
+      for (let j = 0; j < G[i].length; j++) {
+          if (G[i] == resposta.Respostas[i]) acertos++;
+          
+      }
   }
-}
-  if (acertos >= 0) console.log("Cartão do apostador: " +  aposta.Cartao +  " Quantidade de certos: " + acertos);
-  if (acertos == 13) console.log("Parabéns, tu foi o GANHADOR!!" + " - Cartão do premiado: " + aposta.Cartao + " - " + aposta.Numeros + " - Quantidade de certos: " + acertos);
+  if(acertos >= 12) console.log("Aluno: " + resposta.Aluno + " APROVADO! - Número de acertos: " +  acertos);
+  if(acertos < 12) console.log("Aluno: " + resposta.Aluno + " REPROVADO! - Número de acertos: " +  acertos);
+
+    
 }
 
+
+
+/*
+Escreva um algoritmo que leia um vetor G de 20 elementos caractere que representa
+o gabarito de uma prova. A seguir, para cada um dos 50 alunos da turma, leia o vetor de
+respostas (R) do aluno e conte o número de acertos. Mostre o número de acertos do
+aluno e uma mensagem “APROVADO” se a quantidade de acertos for maior ou igual a 12;
+e mostre uma mensagem de “REPROVADO”, caso contrário.
+ */
