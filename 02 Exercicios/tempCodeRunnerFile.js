@@ -1,2 +1,1 @@
-
-          if (G[i] == resposta.Respostas[i]) acertos++;
+ order[i] = array[i + 1] ;
