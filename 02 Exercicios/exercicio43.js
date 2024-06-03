@@ -1,7 +1,7 @@
 
-const obj1 = {Time: 'Grêmio', Libertadores: 2, Ano: [1983, 1995], Estadio: 'Olímpico Monumental', Fundação:1903, Cores: ['Azul', 'Preto', 'Branco']}
+const obj1 = {Time: 'Grêmio', Libertadores: 2, Ano: [1983, 1995], Estadio: 'Olímpico Monumental', Fundacao:1903, Cores: ['Azul', 'Preto', 'Branco']}
 
-const obj2 = {Time: 'Grêmio', Libertadores: 3, Ano: [1983, 1995, 2017], Estadio: 'Arena', Fundação:1903, Cores: ['Azul', 'Preto', 'Branco']}
+const obj2 = {Time: 'Grêmio', Libertadores: 3, Ano: [1983, 1995, 2017], Estadio: 'Arena', Fundacao:1903, Cores: ['Azul', 'Preto', 'Branco']}
 
 
 console.log(mergObj(obj1, obj2));
