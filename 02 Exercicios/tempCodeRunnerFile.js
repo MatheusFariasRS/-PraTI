@@ -1,1 +1,1 @@
- order[i] = array[i + 1] ;
+)

@@ -1,14 +1,13 @@
-const pessoa = [
-    {nome: 'Matheus', idade: 25}
-];
+const pessoa = {
+    nome: 'Matheus', idade: 25
+};
 
 
+console.log("Idade: " + pessoa.idade);
 
-for (let P of pessoa) {
-    const email = 'email';
-    P[email] = 'matheus.contato@gmail.com';
-    console.log("Idade: " + P.idade + " Email: " + P.email);
-}
+    pessoa.email = 'matheus.contato@gmail.com';
+    console.log(pessoa);
+
 
 
 /*
