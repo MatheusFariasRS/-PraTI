@@ -4,17 +4,31 @@ let vectVendas = [
     { venda: 'Mouse Hyperx', vendedor: 'Abmael', valor: 250},
     { venda: 'Teclado mecanico', vendedor: 'Geraldo', valor: 349},
     { venda: 'Cadeira', vendedor: 'Geraldo', valor: 499},
-    { venda: 'Cadeira', vendedor: 'Abmael', valor: 800},
+    { venda: 'HeadSet', vendedor: 'Abmael', valor: 800},
+    { venda: 'notebook', vendedor: 'Josnei', valor: 2300}
 ]
 
-(mergObj(vectVendas));
+console.log(summarizeSales(vectVendas));
 
-
-
-function mergObj(o1) {
-    let obj = {}
-    return obj = {...o1};
+function summarizeSales(array){
+    let countSales = {};
+    array.forEach(sale => {
+        let {vendedor, valor} = sale;
+        if (countSales[vendedor]){
+            countSales[vendedor] += valor;
+        } else{
+            countSales[vendedor] = valor;
+        }
+            
+        
+    });
+    
+    for (let count in countSales) {
+        console.log(`Vendedor: ${count} Total de vendas: R$${countSales[count]}.`);
+    }
 }
+
+
 
 
 /**
