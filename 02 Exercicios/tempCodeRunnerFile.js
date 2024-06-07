@@ -1,1 +1,1 @@
-console.log
+let reajustado = {};

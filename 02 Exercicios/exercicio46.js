@@ -19,8 +19,6 @@ function summarizeSales(array){
         } else{
             countSales[vendedor] = valor;
         }
-            
-        
     });
     
     for (let count in countSales) {
