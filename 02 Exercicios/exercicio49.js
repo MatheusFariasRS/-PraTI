@@ -7,44 +7,26 @@ const objArray = [
     {Id: 832, Valor: 120, Data: '14/09/2024', Categoria: 'PIX' },
 ];
 
-//console.log(transfer(objArray));
-
-
-
-
-const ob = objArray.map((objs) => {
-    if (objs.Categoria) {
-      return {Categoria: objs.Valor };
-    }
-    return objs;
-  });
-
-  console.log(ob);
-
+console.log(transfer(objArray));
 
 function transfer(obj){
-
     let newObjc = {};
-
 
     obj.forEach(value => {
 
         let {Categoria, Valor} = value;
 
         if (newObjc[Categoria]) {
-           newObjc[Categoria] = obj.map(Valor);
+          newObjc[Categoria].push(Valor); 
+          newObjc[Categoria].subTotal += Valor;
         }
         else {
-            newObjc[Categoria] = Valor;
+          let b = [Valor];
+          newObjc[Categoria] = b;
+          newObjc[Categoria].subTotal = Valor;
         }
     });
-
- 
-    
-
-
-
-  // return newObjc;
+  return newObjc;
 }
 
 
