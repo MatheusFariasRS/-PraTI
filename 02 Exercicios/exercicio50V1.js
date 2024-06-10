@@ -1,62 +1,33 @@
 const prompt = require('prompt-sync')();
 
-let hotelAdd;
-let reservaAdd;
+let choose;
 
 const hotel = [];
-const reserva = [];
 
 do {
-    console.log("Digite a opção desejada: \n1 - Adicionar hotel \n2 - Listar hoteis na cidade desejada \n0 - Digite para finalizar.");
-    hotelAdd = parseInt(prompt());
-    if (hotelAdd == 1) {
+    console.log("Digite a opção desejada: \n1 - Adicionar hotel \n2 - Listar hoteis na cidade desejada \n3 - Reservar hotel \n4 - Cancele uma reserva \n5 - Detalhes reservas");
+    choose = parseInt(prompt());
+    if (choose == 1) {
         hotel.push(addHotel(hotel));
     }
-    if (hotelAdd == 2) {
+    if (choose == 2) {
         searchHotel(hotel);
     }
-    if (hotelAdd == 0) {
-        console.log('Fim do programa!');
+    if (choose == 3) {
+       hotel.push(reservation(hotel));
+    }
+    if (choose == 4) {
+
+    }
+
+    if (choose == 5) {
+
+    }
+    if (choose == 5) {
+
     }
 }
-while (hotelAdd !== 0)
-
-
-do {
-    console.log("Digite a opção desejada: \n1 - Reservar hotel \n2 - Cancele uma reserva \n3 - Detalhes reservas");
-    reservaAdd = parseInt(prompt());
-    
-    if (reservaAdd == 1) {
-        console.log(reservation(reserva, hotel));
-
-        let objCreated = {};
-
-        hotel.forEach(quarto => {
-            if (objCreated[quarto.Id]) {
-                objCreated[quarto.QuartosDisponiveis]++;
-            } else {
-                objCreated[quarto.QuartosDisponiveis] = 1;
-            }
-        });
-
-        for (let teste in objCreated) {
-                if(reserva.IdHotel == hotel.Id){
-                    //console.log(` - Id: ${objCreated[teste]} Vagas Disponíveis ${teste - 1}.`);
-                    hotel.pop(teste - 1)
-                }
-                
-      
-            }
-          
-        console.log(objCreated);
-   
-}
-}
-
-
-while (reservaAdd !== 0)
-
-console.log(hotel);
+while (choose !== 0)
 
 /*
 Regras de Negócio:
@@ -89,19 +60,17 @@ function searchHotel(hotel) {
 }
 
 // Permitir que um usuário faça uma reserva em um hotel. Isso deve diminuir o número de quartos disponiveis do hotel.
-function reservation(reserva) {
-    reserva = {
-        IdReserva: parseInt(prompt('Digite o ID para reservar o quarto: ')),
-        IdHotel: parseInt(prompt('Digite o ID do hotel: ')),
-        NomeCliente: prompt('Digite o a nome do cliente: '),
-    }
+function reservation(hotel) {
+    let count = {}
+    hotel.forEach(value => {
+        let {Id, QuartosDisponiveis} = value
+        if (count[Id]) {
+            count[QuartosDisponiveis]--;
+        }
+    })
+    return count;
 
-    return 'Quarto reservado.', reserva;
 };
-
-function mergObj(o1, o2) {
-    return { ...o1, ...o2 };
-}
 
 
 // Permitir que um usuário cancele uma reserva. Isso deve aumentar o número de quartos disponiveis no hotel correspondente.

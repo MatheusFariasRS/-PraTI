@@ -1,1 +1,1 @@
-let reajustado = {};
+value
