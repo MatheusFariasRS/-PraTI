@@ -22,41 +22,27 @@ do {
 while (hotelAdd !== 0)
 
 
+
 do {
     console.log("Digite a opção desejada: \n1 - Reservar hotel \n2 - Cancele uma reserva \n3 - Detalhes reservas");
     reservaAdd = parseInt(prompt());
-    
+
     if (reservaAdd == 1) {
-        console.log(reservation(reserva, hotel));
-
-        let objCreated = {};
-
-        hotel.forEach(quarto => {
-            if (objCreated[quarto.Id]) {
-                objCreated[quarto.QuartosDisponiveis]++;
-            } else {
-                objCreated[quarto.QuartosDisponiveis] = 1;
-            }
-        });
-
-        for (let teste in objCreated) {
-                if(reserva.IdHotel == hotel.Id){
-                    //console.log(` - Id: ${objCreated[teste]} Vagas Disponíveis ${teste - 1}.`);
-                    hotel.pop(teste - 1)
-                }
-                
-      
-            }
-          
-        console.log(objCreated);
-   
+        (reservation(reserva, hotel));
 }
 }
-
 
 while (reservaAdd !== 0)
 
 console.log(hotel);
+
+
+
+
+
+
+
+
 
 /*
 Regras de Negócio:
@@ -89,20 +75,23 @@ function searchHotel(hotel) {
 }
 
 // Permitir que um usuário faça uma reserva em um hotel. Isso deve diminuir o número de quartos disponiveis do hotel.
-function reservation(reserva) {
+function reservation(reserva, hotel) {
     reserva = {
         IdReserva: parseInt(prompt('Digite o ID para reservar o quarto: ')),
         IdHotel: parseInt(prompt('Digite o ID do hotel: ')),
         NomeCliente: prompt('Digite o a nome do cliente: '),
     }
 
-    return 'Quarto reservado.', reserva;
-};
-
-function mergObj(o1, o2) {
-    return { ...o1, ...o2 };
+    let vag = {};
+    for (let vagas of hotel) {
+        vag = vagas;
+        if(reserva.IdHotel == vagas.Id){
+            vag.QuartosDisponiveis = vagas.QuartosDisponiveis - 1; 
+        }
+  } 
+    hotel = vag;
+    return hotel;
 }
-
 
 // Permitir que um usuário cancele uma reserva. Isso deve aumentar o número de quartos disponiveis no hotel correspondente.
 function cancelReservation(reserve) {

@@ -3,7 +3,6 @@ const obj1 = {
 };
 console.log(mode(obj1));
 
-
 function mode(obj){
     let objCreated = {};
     
